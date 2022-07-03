@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+
+  const logOut = () => {
+    localStorage.removeItem('authToken');
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,18 +32,8 @@ const Navbar = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/register">
-                  Signup
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/signin">
-                  Signin
-                </Link>
-              </li>
             </ul>
-            <button className="d-flex flex-row ms-auto me-3">Logout</button>
+            <button onClick={logOut} className="d-flex flex-row ms-auto me-3">Logout</button>
           </div>
         </div>
       </nav>
