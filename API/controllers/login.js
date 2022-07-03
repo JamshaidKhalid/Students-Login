@@ -18,13 +18,13 @@ exports.login = async (req, res) => {
         //checking if the user exists in database or not
         let user = await users.findOne({ email });
         if (!user) {
-            return res.status(422).json({ errors: [{ msg: 'Invalid Credentials' }] });
+            return res.status(401).json({ errors: [{ msg: 'Invalid Credentials' }] });
         }
 
         // comparing the password entered by the user with the hashed password in database
         // bcrypt.compare() is a method which will return true if the password entered by the user is same as the hashed password in database
         if (!await bcrypt.compare(password, user.password)) {
-            return res.status(422).json({ errors: [{ msg: 'Invalid Credentials' }] });
+            return res.status(401).json({ errors: [{ msg: 'Invalid Credentials' }] });
         }
 
 

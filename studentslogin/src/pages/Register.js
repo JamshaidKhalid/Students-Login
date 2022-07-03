@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 
 
 function Register() {
 
-  const history = useHistory();
 
   const [inputField, setInputField] = useState({
     name: "",
@@ -25,8 +24,8 @@ function Register() {
 
 
   //this will work properly
-  const inputHandler = (e) =>{
-    setInputField({...inputField, [e.target.name]:e.target.value});
+  const inputHandler = (e) => {
+    setInputField({ ...inputField, [e.target.name]: e.target.value });
   }
 
 
@@ -37,20 +36,20 @@ function Register() {
     let options = {
       method: 'POST',
       url: url,
-      headers:{
+      headers: {
 
       },
-      data:inputField
+      data: inputField
     }
 
     try {
       let response = await axios(options);
-      console.log(response);      
+      console.log(response);
     } catch (error) {
       console.log("Could'nt send data to server: " + error.message);
     }
 
-    
+
   }
 
   return (
