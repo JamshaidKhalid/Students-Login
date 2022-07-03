@@ -8,9 +8,9 @@ const bcrypt = require('bcryptjs');
 exports.signup = async (req, res) => {
 
     try {
-        if (await (users.findOne({ email: req.body.email }))) {
-            return res.status(422).json({ errors: [{ msg: 'User already exists' }] });
-        }
+        // if (await (users.findOne({ email: req.body.email }))) {
+        //     return res.status(422).json({ errors: [{ msg: 'User already exists' }] });
+        // }
 
         //encrypting and hashing the password and hashed password will be stored in database
         const salt = await bcrypt.genSalt(10);

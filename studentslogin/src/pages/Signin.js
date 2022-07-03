@@ -15,7 +15,7 @@ function Signin() {
               <div className="d-flex flex-row align-items-center mb-4">
                 <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                 <div className="form-outline flex-fill mb-0">
-                  <label className=" text-whiteform-label" for="email">
+                  <label className=" text-whiteform-label" htmlFor="email">
                     Your Email
                   </label>
                   <input type="email" id="email" className="form-control" />
@@ -25,7 +25,7 @@ function Signin() {
               <div className="d-flex flex-row align-items-center mb-4">
                 <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                 <div className="form-outline flex-fill mb-0">
-                  <label className="form-label text-white" for="password">
+                  <label className="form-label text-white" htmlFor="password">
                     Your Password
                   </label>
                   <input
